@@ -1,0 +1,26 @@
+{
+  "name": "npm-backend-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "assert": "^1.4.1",
+    "balanced-match": "^1.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "fs": "0.0.1-security",
+    "moment": "^2.23.0",
+    "pg": "^7.7.1",
+    "pool": "^0.4.1",
+    "ramda": "^0.26.1",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evan Carroll <me@evancarroll.com> (http://www.evancarroll.com/)",
+  "license": "ISC"
+}
