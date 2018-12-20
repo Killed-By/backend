@@ -1,4 +1,4 @@
-CREATE TYPE kbp_gender AS ENUM (
+CREATE TYPE kbp_sex AS ENUM (
 	'Male',
 	'Female',
 	'Trans'
@@ -30,7 +30,7 @@ CREATE TABLE kbp_import (
 	kbp_id            smallint,
 	kbp_date          date,
 	kbp_state         char(2),
-	kbp_gender        kbp_gender,
+	kbp_sex           kbp_sex,
 	kbp_race          kbp_race,
 
 	kbp_name_age text,

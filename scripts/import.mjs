@@ -8,7 +8,7 @@ import * as R   from 'ramda';
 import moment   from 'moment';
 
 
-const MIRROR_LOC = '../../siterip/www.killedbypolice.net';
+const MIRROR_LOC = '../siterip/www.killedbypolice.net';
 const MAX_YEAR = 2018;
 const TOKEN    = '__HAX__';
 
@@ -270,7 +270,7 @@ for ( let i = 2013; i <=MAX_YEAR; i++ ) {
 		}
 		const SQL_INSERT = `
 		INSERT INTO killedby.kbp_import (
-			kbp_id        , kbp_date  ,   kbp_state  , kbp_gender,  kbp_race   ,
+			kbp_id        , kbp_date  ,   kbp_state  , kbp_sex ,    kbp_race   ,
 			kbp_name_age  , kbp_name  ,   kbp_age    , kbp_alias ,  kbp_cause  ,
 			url_kbpfb     , url_src   ,   url_img
 		) VALUES (
@@ -288,11 +288,11 @@ for ( let i = 2013; i <=MAX_YEAR; i++ ) {
 
 					let id     = id_date.ids.pop();
 					let rs     = race_sex.pop();
-					let gender = rs === undefined ? null : rs.gender;
+					let sex    = rs === undefined ? null : rs.sex;
 					let race   = rs === undefined ? null : rs.race;
 
 					const result = await pool.query(SQL_INSERT, [
-						id,  id_date.date, state, gender, race,
+						id,  id_date.date, state, sex, race,
 						kbp_name_age, name, age, nameObj.alias||name_alias.alias, cause,
 						url_kbpfb, url_news, url_img
 					]);
